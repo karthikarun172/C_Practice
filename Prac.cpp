@@ -76,9 +76,57 @@ int nearestValue(int x, int y)
 
     return val1 == val2 ? 0 : (val1 > val2 ? y : x);
 }
+int CtoF(int x)
+{
+    return x + 32;
+}
+
+int greaterThan(int x, int y)
+{
+    return (x >= 20 && x <= 30) && (y <= 30 && y >= 20) ? (x > y ? x : y) : 0;
+}
+
+bool Zazz(string val)
+{
+    int count = 0;
+
+    for (int i = 0; i < val.length(); i++)
+    {
+        if (val[i] == 'z' || val[i] == 'Z')
+        {
+            count++;
+        }
+    }
+    return count > 1 && count < 4;
+}
+bool lastDigit(int x, int y)
+{
+    return to_string(x).back() == to_string(y).back() ? true : false;
+}
+
+string JSTimes(string x, int y)
+{
+    string result = "";
+    for (int i = 0; i < y; i++)
+    {
+        result += x;
+    }
+    return result;
+}
+
+string JST3Times(string x, int y)
+{
+    string val = x.substr(0, 3);
+    string result = "";
+    for (int i = 0; i < y; i++)
+    {
+        result += val;
+    }
+    return result;
+}
 
 int main()
 {
-    printf("hello \n");
+    cout << JST3Times("Python", 3) << endl;
     return 0;
 }
