@@ -1,18 +1,16 @@
-array<int, 5> myarray = {1, 3, 4, 5, 6};
+#include <iostream>
+#include <array>
+#include <algorithm>
+// #include <bits/stdc++.h>
 
-for (auto i = myarray.begin(); i != myarray.end(); i++)
+using namespace std;
+
+int main()
 {
-  cout << *i << endl;
+    int findMax[] = {13, 42, 5, 23, 53};
+    int n = sizeof(findMax) / sizeof(findMax[0]);
+    int ans = *max_element(findMax, findMax + n);
+    int ans1 = *max_element(findMax, findMax + (n - 1));
+    int ans2 = *max_element(findMax, findMax + (n - 5));
+    cout << ans << " " << ans1 << " " << ans2 << " " << n << "\n";
 }
-cout << "Size: " << myarray.size() << endl;
-cout << "Max_Size: " << myarray.max_size() << endl;
-cout << "empty: " << myarray.empty() << endl;
-cout << "at: 2 " << myarray.at(2) << endl;
-cout << "front: " << myarray.front() << endl;
-cout << "back:  " << myarray.back() << endl;
-cout << "data:  " << myarray.data() << endl;
-
-array<int, 10> counter;
-counter.fill(0);
-for (auto i = counter.begin(); i != counter.end(); i++)
-  cout << "|" << *i << endl;

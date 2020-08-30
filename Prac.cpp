@@ -5,6 +5,7 @@
 #include <fstream>
 #include <iomanip>
 #include <cmath>
+#include <array>
 
 using namespace std;
 
@@ -124,9 +125,170 @@ string JST3Times(string x, int y)
     }
     return result;
 }
+int findA(string val)
+{
+    int count = 0;
+    for (int i = 0; i < val.length() - 1; i++)
+    {
+        if (val.substr(i, 2) == "aa")
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+bool A_Occ(string str)
+{
+    int counter = 0;
+    for (int i = 0; i < str.length() - 1; i++)
+    {
+        if (str[i] == 'a')
+            counter++;
+        if (str.substr(i, 2) == "aa" && counter < 2)
+            return true;
+    }
+    return false;
+}
+
+string OddString(string val)
+{
+    string res = "";
+    for (int i = 0; i < val.length(); i++)
+    {
+        cout << i << endl;
+        if (i % 2 == 0)
+            res += val[i];
+    }
+    return res;
+}
+string strAdd(string val)
+{
+
+    string res = "";
+    for (int i = 0; i < val.length(); i++)
+    {
+        res += val.substr(0, i + 1);
+    }
+    return res;
+}
+int twoStr(string val)
+{
+    string str = val.substr(val.length() - 2, val.length());
+    int count = 0;
+    for (int i = 0; i < val.length() - 2; i++)
+    {
+        if (val.substr(i, 2) == str)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+bool Order_num(int x[], int length)
+{
+
+    for (int i = 2; i < length; i++)
+    {
+        if (x[i] == 3 && x[i - 1] == 2 && x[i - 2] == 1)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+int TwoStrComp(string a, string b)
+{
+    int count = 0;
+    for (int i = 0; i < a.length() - 1; i++)
+    {
+        for (int j = 0; j < b.length() - 1; j++)
+        {
+            if (a.substr(i, 2) == b.substr(j, 2))
+            {
+                count += 1;
+            }
+        }
+    }
+    return count;
+}
+
+string RemoveStr1(string a, char b)
+{
+
+    string res = "";
+    for (int i = 1; i < a.length() - 1; i++)
+    {
+        if (a[i] != b)
+        {
+            res += a[i];
+        }
+    }
+    string ans = a[0] + res + a[a.length() - 1];
+    return ans;
+}
+
+string RemoveStr2(string a)
+{
+    string res = "";
+    for (int i = 0; i < a.length(); i += 4)
+    {
+        res += a.substr(i, 2);
+    }
+    return res;
+}
+int IntCout(int a[], int length)
+{
+    int count = 0;
+    for (int i = 0; i < length; i++)
+    {
+        if (a[i] == 5 && (a[i + 1] == 5 || a[i + 1] == 6))
+        {
+            count += 1;
+        }
+    }
+    return count;
+}
+
+bool Triplet(int a[], int length)
+{
+    int count = 0;
+    for (int i = 0; i < length; i++)
+    {
+        if (a[i + 1] == i && a[i + 2] == i)
+        {
+            count++;
+        }
+    }
+    return count > 0 ? true : false;
+}
+
+int SumInClusive(int a, int b)
+{
+    return a + b >= 10 && a + b <= 20 ? 30 : a + b;
+}
+
+int five(int a, int b)
+{
+    return (a == 5 || b == 5) ? 5 : (a + b == 5 || a - b == 5 ? 5 : 0);
+}
+
+bool Thirteen(int a)
+{
+    return a % 13 == 0 || (a - 1) % 13 == 0 ? true : false;
+}
+bool fizzBuzz(int a)
+{
+    return (a % 3 == 0 and a % 7 == 0) ? false : true;
+}
+
+bool TenMultiple(int a)
+{
+    return ((a + 2) % 10 == 0 || (a + 1) % 10 == 0 || (a - 1) % 10 == 0 || (a - 2) % 10 == 0) ? true : false;
+}
 
 int main()
 {
-    cout << JST3Times("Python", 3) << endl;
+    cout << TenMultiple(21) << endl;
     return 0;
 }
