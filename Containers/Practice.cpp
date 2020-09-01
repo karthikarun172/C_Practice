@@ -2,21 +2,19 @@
 #include <vector>
 
 using namespace std;
+
 int main()
 {
-    vector<int> arr;
-    int ar[] = {1, 22, 33, 53, 6, 3, 63};
-    int length = sizeof(ar) / sizeof(ar[0]);
+    int arr[] = {1, 2, 3, 4, 5, 2, 6};
 
-    arr.assign(ar, ar + length);
-    int i = 0;
-    arr.insert(arr.begin() + i, 23222);
-    arr.erase(arr.end() - 1);
+    int length = sizeof(arr) / sizeof(arr[0]);
 
-    for (int e : arr)
+    for (int i = 0; i < length; ++i)
     {
-        cout << e << ' ';
+        arr[i] * 2;
     }
-
-    return 0;
+    for (int i = 0; i < length; ++i)
+    {
+        cout << arr[i] << " ";
+    }
 }

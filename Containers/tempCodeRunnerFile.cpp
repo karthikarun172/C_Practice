@@ -1,21 +1,50 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
+
 int main()
 {
-    vector<int> arr;
-    int ar[] = {1, 22, 33, 53, 6, 3, 63};
-    int length = sizeof(ar) / sizeof(ar[0]);
+    int a, b, n = 0;
+    string str[9] = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+    cin >> a >> b;
 
-    arr.assign(ar, ar + length);
-    int i = 2;
-    arr.insert(arr.begin() + i, 23222);
-    arr.erase(arr.end() - 1);
-    for (int e : arr)
+    if ((a <= 9) && (b <= 9))
     {
-        cout << e << ' ';
+        for (int i = a; i < b; ++i)
+        {
+            cout << str[i - 1] << endl;
+        }
     }
-
-    return 0;
+    else if ((a <= 9) && (b > 9))
+    {
+        for (int i = a; i <= 9; ++i)
+        {
+            cout << str[i - 1] << endl;
+        }
+        for (int i = 10; i <= b; ++i)
+        {
+            if (i % 2 == 0)
+            {
+                cout << "even" << endl;
+            }
+            else
+            {
+                cout << "odd" << endl;
+            }
+        }
+    }
+    else
+    {
+        for (int i = a; i < b; ++i)
+        {
+            if (i % 2 == 0)
+            {
+                cout << "even" << endl;
+            }
+            else
+            {
+                cout << "odd" << endl;
+            }
+        }
+    }
 }
