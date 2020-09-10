@@ -1,32 +1,67 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include <algorithm>
+#include <set>
 
 using namespace std;
 
-void print(string x)
-{
-    cout << x << endl;
-}
+// int findLowerBound(vector<int> arr, int num)
+// {
+//     int ar[] = {1, 1, 2, 2, 6, 9, 9, 15};
+//     int length = sizeof(ar) / sizeof(ar[0]);
+//     vector<int> arr;
+//     for (int i = 0; i < length; i++)
+//     {
+//         arr.push_back(ar[i]);
+//     }
+//     std::vector<int>::iterator a;
 
+//     cout << "enter the lower bound" << endl;
+//     int T, Q;
+//     cin >> T;
+
+//     for (int i = 0; i < T; i++)
+//     {
+//         cin >> Q;
+//         a = lower_bound(arr.begin(), arr.end(), Q);
+//         int ans = (a + 1 - arr.begin());
+//         if (arr[ans - 1] == Q)
+//         {
+//             cout << "Yes " << ans << endl;
+//         }
+//         else
+//         {
+//             cout << "No " << ans << endl;
+//         }
+//     }
+// }
+
+int Set_Operation()
+{
+}
 int main()
 {
-    string iop;
-
-    cout << "enter the string you have to enter: " << endl;
-    getline(cin, iop);
-
-    iop.push_back('r');
-
-    iop.pop_back();
-
-    iop.capacity();
-    iop.resize(4);
-    iop.length();
-    iop.shrink_to_fit();
-
-    std::string::iterator num;
-    std::string::iterator num2;
-
-    for (num = iop.begin(); num != iop.end(); num++)
-        cout << *num << endl;
+    set<int> arr;
+    int q, t, val;
+    cin >> q;
+    for (int i = 0; i < q; ++i)
+    {
+        cin >> t >> val;
+    }
+    for (int i = 0; i < q; i++)
+    {
+        if (t == 1)
+        {
+            arr.insert(val);
+        }
+        else if (t == 2)
+        {
+            arr.erase(val);
+        }
+        else if (t == 3)
+        {
+            arr.find(val) == arr.end() ? cout << "No" << endl : cout << "Yes" << endl;
+        }
+    }
 }
