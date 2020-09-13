@@ -3,42 +3,58 @@
 
 using namespace std;
 
-typedef long long ll;
-typedef long double ld;
+vector<int> compareTriplets(vector<int> al, vector<int> bo)
+{
+    int alice = 0;
+    int bob = 0;
+
+    for (int i = 0; i < al.size(); i++)
+    {
+        if (al[i] > bo[i])
+        {
+            alice++;
+        }
+        else if (al[i] < bo[i])
+        {
+            bob++;
+        }
+    }
+    cout << alice << " " << bob << " " << endl;
+}
+long aVeryBigSum(vector<int> ar)
+{
+    long ans = 0;
+    for (int i = 0; i < ar.size(); i++)
+    {
+        ans += ar[i];
+    }
+    return ans;
+}
+int diagonalDifference(vector<vector<int>> arr)
+{
+}
 
 int main()
 {
-    //freopen("input.txt", "r", stdin);
-    //freopen("output.txt", "w", stdout);
-    string s;
-    cin >> s;
-    vector<char> st;
-    for (int i = 0; i < (int)s.length(); i++)
+    vector<vector<int>> a;
+
+    vector<int> arr;
+    vector<int> arr1;
+
+    int a1[] = {1, 2, 3};
+    int a2[] = {4, 5, 6};
+
+    for (int i = 0; i < 3; i++)
     {
-        if (!st.empty() && st.back() == s[i])
-        {
-            st.pop_back();
-        }
-        else
-        {
-            st.push_back(s[i]);
-        }
+        arr.push_back(a1[i]);
+        arr1.push_back(a2[i]);
     }
-    for (int i = 0; i < s.size(); i++)
+
+    a.push_back(arr);
+    a.push_back(arr1);
+
+    for (int i = 0; i < a.size(); i++)
     {
-        cout << s[i] << endl;
+        cout << "sd" << endl;
     }
-    if (st.empty())
-    {
-        printf("Empty String\n");
-    }
-    else
-    {
-        for (int i = 0; i < (int)st.size(); i++)
-        {
-            printf("%c", st[i]);
-        }
-        printf("\n");
-    }
-    return 0;
 }
