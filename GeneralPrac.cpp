@@ -10,10 +10,10 @@ using namespace std;
 #define ROW 4
 #define COL 5
 
-int main()
+int main()  
 {
     // Initializing the vector of vectors
-    vector<vector<int>> vec;
+    vector<vector<int> > vec;
 
     // Elements to insert in column
     int num = 10;
